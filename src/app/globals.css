@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #0b1c2c; /* Deep Navy Background */
+  --color-secondary: #0056f1; /* Vibrant Blue CTA */
+  --color-accent: #25D366; /* WhatsApp Green Highlight */
+  --color-background: #f4f5f7; /* Light grey for sections */
+  --color-text: #0b1c2c; /* Navy text for light backgrounds */
+  --color-muted: #64748b;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Highlight Effect mimicking Dogma Group */
+.lime-highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--color-primary); /* Navy text on lime */
+  z-index: 1;
+  padding: 0.1rem 0.8rem;
+  line-height: 1.1;
+}
+
+.lime-highlight::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 105%;
+  background-color: var(--color-accent);
+  z-index: -1;
+  transform: translate(-50%, -50%) rotate(-1.5deg);
+  border-radius: 4px;
+}
+
+/* Deep Navy sections */
+.bg-navy {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Vibrant Blue Button */
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0044c2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 86, 241, 0.3);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
